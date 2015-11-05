@@ -29,7 +29,7 @@ RUN apt-get update
 # Install Cassandra
 RUN echo "deb http://debian.datastax.com/community stable main" | sudo tee -a /etc/apt/sources.list.d/datastax.sources.list
 RUN curl -L http://debian.datastax.com/debian/repo_key | sudo apt-key add -
-RUN apt-get update
+RUN apt-get update -y
 RUN apt-get install -y  datastax-agent
 
 # Start the datastax-agent
