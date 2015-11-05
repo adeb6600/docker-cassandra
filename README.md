@@ -11,7 +11,7 @@ Running as standalone
 
 Just start the image normally
 
-    docker run -d zmarcantel/cassandra
+    docker run -d spotagory/cassandra
 
 The necessary ports are exposed, so you can interact with the docker image as you normally do.
 
@@ -24,8 +24,8 @@ Simply use the builtin `docker` provisioner to pull and start the image.
 
 ````ruby
 config.vm.provision "docker" do |d|
-    d.pull_images "zmarcantel/cassandra"
-    d.run "cass", image: "zmarcantel/cassandra"
+    d.pull_images "spotagory/cassandra"
+    d.run "cass", image: "spotagory/cassandra"
 end
 ````
 
@@ -48,7 +48,7 @@ Start a first image, and then link them all up.
 
 ##### Start the first image
 
-    docker run -d -name cass0 zmarcantel/cassandra
+    docker run -d -name cass0 spotagory/cassandra
 
 ##### Link the cluster
 
@@ -72,7 +72,7 @@ config.vm.provision "docker" do |d|
 
     d.run "second", auto_assign_name: false,
       args: "--name cass2 --link cass0:cass0 --link cass1:cass1",
-      image: "zmarcantel/cassandra"
+      image: "spotagory/cassandra"
 end
 ````
 
@@ -85,11 +85,11 @@ Usage Guide
 
 Get image ID for `docker-cassandra` on your machine
 
-    docker images | grep "zmarcantel/cassandra" | sed -e "s/\s\+/ /g" | cut -d' ' -f3
+    docker images | grep "spotagory/cassandra" | sed -e "s/\s\+/ /g" | cut -d' ' -f3
 
 __This is a very convenient export: the image ID__
 
-    export CASSDOCK_ID=`docker images | grep "zmarcantel/cassandra" | sed -e "s/\s\+/ /g" | cut -d' ' -f3`
+    export CASSDOCK_ID=`docker images | grep "spotagory/cassandra" | sed -e "s/\s\+/ /g" | cut -d' ' -f3`
 
 List the IPs of containers running `docker-cassandra`
 
