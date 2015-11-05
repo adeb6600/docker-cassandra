@@ -4,7 +4,9 @@
 ##
 
 FROM ubuntu
-MAINTAINER Zachary Marcantel, zmarcantel@gmail.com, zach@zed.io, zmarcantel@utexas.edu
+MAINTAINER Adebanjo Inioluwa , adeb6600@gmail.com, inioluwa@spotagory.com
+
+VOLUME ["/var/lib/cassandra"]
 
 # Add PPA for the necessary JDK
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | tee /etc/apt/sources.list.d/webupd8team-java.list
