@@ -8,6 +8,8 @@ MAINTAINER Adebanjo Inioluwa , adeb6600@gmail.com, inioluwa@spotagory.com
 
 VOLUME ["/var/lib/cassandra"]
 
+VOLUME ["/var/csv"]
+
 # Add PPA for the necessary JDK
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | tee /etc/apt/sources.list.d/webupd8team-java.list
 RUN echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | tee -a /etc/apt/sources.list.d/webupd8team-java.list
